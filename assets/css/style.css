@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #007bff; /* Biru */
-    --secondary-color: #6c757d; /* Abu-abu */
+    --primary-color: #124b88; /* Biru */
+    --secondary-color: #579fde; /* Abu-abu */
     --accent-color: #28a745; /* Hijau */
     --text-color: #0b0923;
     --bg-light: #f8f9fa;
@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -78,7 +78,7 @@ nav .container {
 
 /* Hero Section */
 #hero {
-    background-image: url('/IHIA_TEST/assets/images/hero_bg.jpg'); /* Ganti dengan gambar Anda */
+    background-image: url('/assets/images/hero_bg.jpg'); /* Ganti dengan gambar Anda */
     background-size: cover;
     background-position: left;
     color: rgb(14, 80, 155);
@@ -93,7 +93,7 @@ nav .container {
 /* --- HERO SECTION TEXT GRADIENT --- */
 #hero h1 {
     /* Properti gradasi yang sudah ada */
-    background: linear-gradient(-45deg, #0056b3,#0056b3, #afd2ff, #0056b3, #0056b3 );
+    background: linear-gradient(-45deg, #0056b3,#0056b3, #64a7ff, #0056b3, #0056b3 );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -149,6 +149,32 @@ nav .container {
     background-color: #5a6268;
 }
 
+/* --- ABOUT IHIA SECTION (Logo) --- */
+/* Ini memastikan teks di container ini rata tengah */
+#about-ihia .container {
+    text-align: center;
+}
+
+.about-logos {
+    display: flex; /* Menggunakan Flexbox untuk menata logo bersandingan */
+    justify-content: center; /* Menengahkan logo secara horizontal */
+    align-items: center; /* Menyelaraskan logo secara vertikal jika tingginya berbeda */
+    gap: 30px; /* Jarak antar kedua logo */
+    margin-bottom: 30px; /* Jarak antara logo dan judul "Tentang IHIA" */
+    flex-wrap: wrap; /* Penting: agar logo bisa turun ke baris baru di layar kecil */
+}
+
+.about-logos img {
+    max-width: 300px; /* Ukuran maksimum lebar setiap logo, sesuaikan jika perlu */
+    height: auto;
+    display: block; /* Memastikan gambar adalah block element */
+}
+
+/* Anda juga bisa memberikan border-radius jika logonya tidak lingkaran atau ingin efek membulat */
+/* .about-logo img {
+    border-radius: 10px;
+} */
+
 /* Sections */
 h2 {
     text-align: center;
@@ -168,18 +194,64 @@ h2 {
     gap: 30px;
     margin-top: 30px;
 }
+.highlight-image {
+    width: 300px; /* Lebar wadah gambar, bisa disesuaikan */
+    height: 200px; /* Tinggi wadah gambar, disesuaikan agar proporsional */
+    border-radius: 2%; /* Membuat wadah gambar berbentuk lingkaran */
+    overflow: hidden; /* Penting untuk memotong bagian gambar yang keluar dari lingkaran */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Bayangan untuk bingkai foto */
+    display: flex; /* Untuk memposisikan gambar di tengah */
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Warna latar belakang jika gambar loading atau tidak ada */
+}
 
+.highlight-image img {
+    width: 100%; /* Membuat gambar mengisi seluruh lebar wadah */
+    height: 100%; /* Membuat gambar mengisi seluruh tinggi wadah */
+    object-fit: cover; /* Penting! Memastikan gambar terpotong dan mengisi area tanpa distorsi */
+    /* object-position: center; */ /* Optional: jika ingin mengatur posisi fokus gambar */
+}
+
+/* Jaga styling .highlight-item, .highlight-item:hover, h3, p.date, p lainnya */
+/* Yang ini sudah ada dari sebelumnya dan tetap berlaku */
 .highlight-item {
-    background-color: var(--bg-light);
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.highlight-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .highlight-item h3 {
     color: var(--accent-color);
+    font-size: 1.5em;
     margin-bottom: 10px;
 }
+
+.highlight-item p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.highlight-item p.date {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
 
 /* Footer */
 footer {
@@ -274,9 +346,90 @@ footer .social-links img {
     margin-top: 40px;
 }
 
+/* --- PARTNERS SECTION --- */
+#partners {
+    background-color: var(--bg-white);
+    padding: 60px 0;
+}
+
+#partners h2 {
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.partners-slider {
+    width: 80%; /* Lebar slider, sesuaikan kebutuhan */
+    margin: 0 auto;
+    overflow: hidden; /* Menyembunyikan logo yang berada di luar viewport */
+    position: relative;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(200px * 10); /* Lebar total slide track (lebar satu slide * jumlah total slide) */
+    animation: scroll 20s linear infinite; /* Nama animasi, durasi, fungsi waktu, pengulangan */
+    -webkit-animation: scroll 20s linear infinite;
+}
+
+.slide {
+    height: 80px; /* Tinggi logo */
+    margin: 0 20px; /* Jarak antar logo */
+    display: flex;
+    align-items: center;
+}
+
+.slide img {
+    max-height: 100%; /* Memastikan tinggi logo tidak melebihi wadah */
+    width: auto;
+    filter: grayscale(100%); /* Membuat logo berwarna abu-abu (opsional) */
+    opacity: 0.7; /* Memberikan sedikit efek pudar (opsional) */
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.slide img:hover {
+    filter: grayscale(0%); /* Mengembalikan warna saat di-hover (opsional) */
+    opacity: 1;
+}
+
+/* Animasi */
+@keyframes scroll {
+    0% { -webkit-transform: translateX(0); transform: translateX(0); }
+    100% { -webkit-transform: translateX(calc(-200px * 5)); transform: translateX(calc(-200px * 5)); } /* Geser sejauh 5 logo */
+}
+
+@-webkit-keyframes scroll {
+    0% { -webkit-transform: translateX(0); transform: translateX(0); }
+    100% { -webkit-transform: translateX(calc(-200px * 5)); transform: translateX(calc(-200px * 5)); } /* Geser sejauh 5 logo */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .partners-slider {
+        width: 95%;
+    }
+    .slide {
+        height: 60px;
+        margin: 0 10px;
+    }
+    .slide img {
+        max-height: 100%;
+    }
+    .slide-track {
+        width: calc(120px * 10); /* Sesuaikan lebar untuk layar kecil */
+        animation-duration: 30s; /* Perlambat animasi di layar kecil */
+        -webkit-animation-duration: 30s;
+    }
+    @keyframes scroll {
+        100% { -webkit-transform: translateX(calc(-120px * 5)); transform: translateX(calc(-120px * 5)); }
+    }
+    @-webkit-keyframes scroll {
+        100% { -webkit-transform: translateX(calc(-120px * 5)); transform: translateX(calc(-120px * 5)); }
+    }
+}
+
 /* --- HERO SUBPAGE --- */
 .hero-subpage {
-    background-color: var(--primary-color); /* Bisa juga gradasi */
+    background-image: url(/assets/images/hero_ab.jpg); /* Bisa juga gradasi */
     color: white;
     text-align: center;
     padding: 80px 20px;
@@ -403,13 +556,13 @@ footer .social-links img {
     justify-content: center;
     align-items: center;
     margin: 0 auto 20px auto;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(84, 84, 84, 0.447);
 }
 
 .icon-circle img {
     width: 40px; /* Adjust icon size */
     height: 40px;
-    filter: invert(100%); /* Make white if original is dark */
+    /*filter: invert(100%); /* Make white if original is dark */
 }
 
 /* General utility */
@@ -419,4 +572,108 @@ footer .social-links img {
 
 .mt-20 {
     margin-top: 20px;
+}
+
+/* --- REGISTRATION FORM STYLING --- */
+
+/* Container utama untuk formulir */
+.form-container {
+    max-width: 700px;
+    margin: 40px auto; /* Memberi jarak atas/bawah dan posisi tengah */
+    background-color: var(--bg-white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Bayangan lembut */
+}
+
+/* Mengatur jarak antar setiap grup input (label + input) */
+.form-group {
+    margin-bottom: 25px; /* Jarak yang lebih konsisten antar field */
+}
+
+/* Styling untuk semua label */
+.form-group label {
+    display: block; /* Membuat label berada di barisnya sendiri */
+    margin-bottom: 8px; /* Jarak antara label dan input field */
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 1.05em; /* Sedikit lebih besar agar jelas */
+}
+
+/* Styling untuk input teks, email, telepon, dan select */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="url"],
+.form-group input[type="file"], /* Styling dasar untuk input file */
+.form-group select,
+.form-group textarea {
+    width: 100%; /* Membuat input field mengisi seluruh lebar parent */
+    padding: 12px 15px; /* Padding di dalam input */
+    border: 1px solid #ced4da; /* Border tipis */
+    border-radius: 6px; /* Sudut sedikit membulat */
+    font-size: 1em;
+    box-sizing: border-box; /* Penting: agar padding tidak menambah lebar total */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transisi halus */
+}
+
+/* Efek fokus saat input diklik */
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="url"]:focus,
+.form-group input[type="file"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color); /* Warna border berubah saat fokus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Efek bayangan fokus */
+    outline: none; /* Menghilangkan outline default browser */
+}
+
+/* Styling khusus untuk textarea */
+.form-group textarea {
+    resize: vertical; /* Hanya memungkinkan resize vertikal */
+    min-height: 120px; /* Tinggi minimum textarea */
+}
+
+/* Styling untuk checkbox */
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* Jarak atas untuk checkbox */
+    margin-bottom: 30px; /* Jarak bawah sebelum tombol submit */
+}
+
+.form-checkbox input[type="checkbox"] {
+    margin-right: 10px; /* Jarak antara checkbox dan label */
+    width: 20px; /* Ukuran checkbox */
+    height: 20px;
+    accent-color: var(--primary-color); /* Mengubah warna checkbox default */
+    cursor: pointer;
+}
+
+.form-checkbox label {
+    margin-bottom: 0; /* Hapus margin bawah default label */
+    font-weight: normal; /* Normal weight untuk label checkbox */
+    font-size: 0.95em;
+    cursor: pointer;
+}
+
+.form-checkbox label a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-checkbox label a:hover {
+    text-decoration: underline;
+}
+
+/* Styling untuk tombol submit */
+.form-container .btn {
+    width: 100%; /* Tombol submit mengisi lebar penuh */
+    padding: 15px; /* Padding tombol lebih besar */
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none; /* Hapus border default */
 }
