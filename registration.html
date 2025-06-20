@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Inovasi - IHIA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo.png" alt="IHIA Logo">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang IHIA</a></li>
+                    <li><a href="categories.html">Kategori Inovasi</a></li>
+                    <li><a href="registration.html">Daftar Sekarang</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    ☰
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <h2 class="text-center">Daftar Inovasi Anda</h2>
+            <p class="text-center">Isi formulir di bawah ini untuk mendaftarkan inovasi Anda ke Indonesia Healthcare Innovation Awards.</p>
+
+            <div class="form-container"> <form id="registration-form" action="#" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="nama_tim">Nama Tim/Individu:</label>
+                        <input type="text" id="nama_tim" name="nama_tim" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telepon">Nomor Telepon:</label>
+                        <input type="tel" id="telepon" name="telepon" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kategori">Kategori Inovasi:</label>
+                        <select id="kategori" name="kategori" required>
+                            <option value="">Pilih Kategori</option>
+                            <option value="alat_medis">Alat Medis Inovatif</option>
+                            <option value="layanan_digital">Layanan Kesehatan Digital</option>
+                            <option value="riset_pengembangan">Riset & Pengembangan Kesehatan</option>
+                            <option value="edukasi_promosi">Edukasi & Promosi Kesehatan</option>
+                            <option value="lainnya">Lainnya</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="judul_inovasi">Judul Inovasi:</label>
+                        <input type="text" id="judul_inovasi" name="judul_inovasi" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deskripsi_inovasi">Deskripsi Singkat Inovasi (maks. 500 kata):</label>
+                        <textarea id="deskripsi_inovasi" name="deskripsi_inovasi" rows="8" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dokumen_pendukung">Upload Dokumen Pendukung (Proposal/Presentasi PDF, maks. 5MB):</label>
+                        <input type="file" id="dokumen_pendukung" name="dokumen_pendukung" accept=".pdf" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="video_link">Link Video (Opsional, YouTube/Vimeo):</label>
+                        <input type="url" id="video_link" name="video_link">
+                    </div>
+
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="setuju_syarat" name="setuju_syarat" required>
+                        <label for="setuju_syarat">Saya setuju dengan <a href="syarat_ketentuan.html" target="_blank">Syarat & Ketentuan</a> yang berlaku.</label>
+                    </div>
+
+                    <button type="submit" class="btn primary-btn">Kirim Pendaftaran</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Indonesia Healthcare Innovation Awards. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><img src="assets/images/icon-facebook.png" alt="Facebook"></a>
+                <a href="#" aria-label="Instagram"><img src="assets/images/icon-instagram.png" alt="Instagram"></a>
+                <a href="#" aria-label="LinkedIn"><img src="assets/images/icon-linkedin.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
